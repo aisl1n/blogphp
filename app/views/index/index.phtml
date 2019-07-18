@@ -1,0 +1,33 @@
+<div style="margin-top: 100px"></div>
+<p><?php echo $this->flashSession->output()?></p>
+
+<?php 
+
+	if (isset($posts)) {
+		foreach ($posts as $key) {
+		?>	
+		
+			
+		<div class="card mb-3" style="max-width: 540px;">
+  		<div class="row no-gutters">
+   		 <div class="col-md-4">
+			<?php   echo $this->tag->image(["public/img/" . $key->image, "class" => "card-img-top"]) ?>    </div>
+    	<div class="col-md-8">
+      		<div class="card-body">
+			<h5 class="card-title"><?php echo $key->titulo ?></h5>
+			<p class="card-text"><?php echo $key->post ?></p>
+		<a class='btn btn-primary' href='posts/excluir/<?php echo $key->id ?>'>excluir</a>
+		<p class="card-text"><small class="text-muted">Copyright © 2019 Aisl1n - Todos os direitos reservados Política de Privacidade </small></p>
+		</div>
+    </div>
+  </div>
+</div>
+
+
+		<?php	
+		}
+	}
+?>
+
+
+
